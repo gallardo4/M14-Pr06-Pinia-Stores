@@ -8,11 +8,11 @@ export const useCartStore = defineStore("CartStore", {
         }
     },
     
-    actions: () => {
-        const addToCart = (count, product) => {
-            count = parseInt(count)
+    actions: {
+        addItems(count, item) {
+            count = parseInt(count);
             for (let index = 0; index < count; index++) {
-                useCartStore.items.push(product);
+                this.items.push(item);
             }
         }
     }

@@ -8,6 +8,15 @@ const productStore = useProductStore();
 const cartStore = useCartStore();
 
 productStore.fill();
+
+const addToCart = (count, product) => {
+  count = parseInt(count);
+  cartStore.$patch((state) => {
+    for (let index = 0; index < count; index++) {
+      state.items.push(product);
+    }
+  });
+};
 </script>
 
 <template>
