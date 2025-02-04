@@ -6,14 +6,14 @@ export const useProductStore = defineStore("ProductStore", {
     // state
     state: () => {
         return {
-            products,
+            products: [],
         }
     },
 
     // actions
     actions: {
         async fill() {
-            this.products = (await import("@/data/products.json")).default
+            this.products = (await import("@/data/products.json")).default;
         }
     },
 
